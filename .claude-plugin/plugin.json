@@ -1,0 +1,11 @@
+{
+  "name": "empco-uwg-monitor",
+  "displayName": "EmpCo-UWG Monitor",
+  "version": "1.0.0",
+  "description": "Erkennt Greenwashing – irreführende Umweltaussagen, unbelegte Klimaversprechen, selbstgemachte Siegel – nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825.",
+  "author": {
+    "name": "Tobias Zucali & Niederschick OG",
+    "url": "https://nw-partner.at"
+  },
+  "license": "Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG."
+}

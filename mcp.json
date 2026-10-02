@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "empco-uwg-monitor": {
+      "type": "streamable-http",
+      "url": "https://claims.agent-services.at/v1/mcp"
+    }
+  }
+}
