@@ -2,8 +2,8 @@
 name: diagnose-monitor-plugin
 description: Diagnose des EmpCo-UWG Monitor Plugins – meldet belegte Fähigkeiten dieser Umgebung, Verbindung zum Regelserver und alle Versionen, oder wertet auf Wunsch den Ablauf des letzten Laufs aus. Verwenden, wenn die Person die Diagnose verlangt, nach Version, Stand oder Verbindung des Plugins fragt, über eine mögliche Störung des Plugins klagt oder in einem Gespräch mit einer Plugin-Antwort deren Ablauf hinterfragt („prüfe die Antwort“, „was ist passiert“, „warum hast du das so gemacht“, „war das richtig“); nicht für fachliche Prüfaufträge zu einem Text oder einer Website.
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-version: 1.1.0
-build: v1.1.0
+version: 1.2.0
+build: v1.2.0
 ---
 
 # Diagnose des EmpCo-UWG Monitors
@@ -64,7 +64,7 @@ Diese Versionsliste gehört zum gemeinsamen Kurzprofil von `version` und Ablauf-
 - **Connectors des Pakets:** je Server in `mcp.json` beziehungsweise `.mcp.json` Name und Adresse (ohne Query und Zugangsdaten). Die Version des Servers steht nur im Bericht, wenn der Host sie nennt (etwa als Server-Version der Verbindung), sonst `nicht feststellbar`; der Regelstand der Schrittantwort ist ein eigener Wert.
 - **Skill- oder Instructions-Stand:** `version` und `build` im Frontmatter dieses Skills; ohne Skill die Zeile „Stand dieses Textes“ am Anfang dieser Anweisung oder, bei einem Instructions-Feld, `build` in dessen Frontmatter. Fehlt `build` und steht nur `version`, benenne das und nenne den Wert trotzdem („kein `build`-Feld, nur `version: X.Y` – Hinweis auf eine ungebaute Quelldatei statt des gebauten Artefakts“). Fehlen beide, benenne das als Anomalie, ohne einen Wert zu erfinden. `build` ist ein Git-Stand (Tag, Commit-Abstand, Kurzkennung): Er wird nicht mit `version` verglichen; ein Anhang `dirty` nennst du als Hinweis auf nicht eingecheckte Änderungen im Bau.
 - **Regelstand:** nur aus einer Schrittantwort dieses Gesprächs: `version`, `platform` (Plattform des Zugriffs) und `variant` (Plattform der gelieferten Variante) sowie `build` aus dem Frontmatter je geladenem Schritt. `version` einer Schrittantwort ist der Stand des Regelpakets und stammt aus derselben Quelle wie die Version von Plugin und Skills (`1.0.0`, in einem Entwicklungsbau `1.0.0-dev.<Kennung>`); `build` ist der Git-Stand, aus dem die Regeln gebaut wurden (Tag, Commit-Abstand, Kurzkennung, bei nicht eingecheckten Änderungen `dirty`), und wird nicht mit `version` verglichen; fehlt es, nenne das als Befund und erfinde keinen Wert. Fehlt `variant`, wurden die Basisregeln geliefert; fehlt `platform`, hat keine Quelle (Pfad, Argument des Werkzeugs, zugeordneter Client) eine Plattform genannt, auch das ist kein Befund. Wurde noch kein Schritt geladen, steht dennoch die Zeile `step:report-intake` mit dem Regelstand `nicht geladen`.
-- Weichen geladene Schrittversionen voneinander ab, benenne das ausdrücklich als möglichen gemischten Stand.
+- Vergleiche `version` und `build` innerhalb ihrer Auslieferungsoberfläche: Die geladenen Schritte bilden den live ausgelieferten Regelstand, Plugin und Skills den paketierten Stand. Abweichungen innerhalb einer Oberfläche kennzeichnest du als möglichen gemischten Stand beziehungsweise Konflikt. Ein jüngerer `build` der live ausgelieferten Regeln gegenüber dem paketierten Stand ist ein erwarteter Auslieferungsunterschied und ändert `mixed_state` nicht.
 
 ### 6. Vor der Ausgabe
 
@@ -121,7 +121,7 @@ versions:                       # eine Zeile je Komponente, immer dieselben Feld
   - {component: "step:report-intake", version: "...", build: "... | unknown", source: "Schrittantwort", platform: "... | keine", variant: "... | basis"}
 mixed_state: true | false | unknown   # true, wenn geladene Schrittversionen voneinander abweichen
 unknowns: [...]
-conflicts: []                   # widersprüchliche Belege, ohne sie zu glätten
+conflicts: []                   # widersprüchliche Belege innerhalb derselben Auslieferungsoberfläche; die Host-Manifeste behalten ihren jeweils vorgesehenen Transporttyp
 raw: {tools: [...], env: "..."} # nur mit `voll`; steht im selben Block, damit er sich mit einem Griff kopieren lässt; bei mehr als 50 Werkzeugen nach Quelle gruppiert, nur Namen
 ```
 

@@ -1,6 +1,6 @@
 ---
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-build: v1.1.0
+build: v1.2.0
 ---
 
 # Einrichtung des Plugins
@@ -42,7 +42,8 @@ In der Desktop-App oder auf [claude.ai](https://claude.ai/customize/plugins/your
    - Danach erneut auf **Verbinden** klicken. Claude öffnet im Browser die Anmeldeseite auf [https://claims.agent-services.at](https://claims.agent-services.at).
    - Dort den **Zugangscode** eingeben, der Ihnen per E-Mail zugesandt wurde, und bestätigen. Die Aktivierung kann einen Moment dauern.
    - Die Einrichtung ist erst abgeschlossen, wenn beim Connector **Verbunden** steht. Erst dann steht Ihnen das Plugin in voller Funktionalität zur Verfügung – die Installation allein reicht nicht.
-4. Oben auf der Seite des Plugins **In Cowork ausprobieren** wählen und einen Prüfauftrag stellen. Beim ersten Prüfauftrag fragt Claude, ob es „Verarbeitungsschritt abrufen“ von `empco-uwg-monitor` verwenden darf: Dieser Zugriff auf die Verarbeitungsschritte muss gewährt werden, am besten mit **Immer erlauben**. Sonst erscheint die Abfrage bei jedem einzelnen Abruf erneut, und ohne Erlaubnis ist keine Prüfung möglich.
+   - Optional: den Connector `empco-uwg-monitor` anklicken und unter **Tool-Berechtigungen** bei „Verarbeitungsschritt abrufen“ **Immer erlauben** wählen. Dann entfällt die Rückfrage beim ersten Prüfauftrag.
+4. Oben auf der Seite des Plugins **In Cowork ausprobieren** wählen und einen Prüfauftrag stellen. Ist der Zugriff nicht schon beim Connector erlaubt, fragt Claude beim ersten Prüfauftrag, ob es „Verarbeitungsschritt abrufen“ von `empco-uwg-monitor` verwenden darf: Dieser Zugriff auf die Verarbeitungsschritte muss gewährt werden, am besten mit **Immer erlauben**. Sonst erscheint die Abfrage bei jedem einzelnen Abruf erneut, und ohne Erlaubnis ist keine Prüfung möglich.
 
 Lässt sich der Marketplace nicht erreichen, hilft die [Installation per Zip-Datei](#installation-per-zip-datei).
 
@@ -56,7 +57,7 @@ Eine neue Cowork-Sitzung starten und einen Prüfauftrag stellen, zum Beispiel:
 Prüfe diesen Text auf Greenwashing-Risiken: Unsere Verpackung ist 100 % umweltfreundlich.
 ```
 
-Fragt Claude um Erlaubnis für „Verarbeitungsschritt abrufen“, **Immer erlauben** wählen (siehe Installation, Schritt 4). Soll eine Website geprüft werden, fragt Claude außerdem, ob es Seiten von dieser Website abrufen darf (die Diagnose ruft dafür die Support-Seite auf): **Alles für diese Website erlauben** oder **Einmal erlauben** wählen, sonst kann die Seite nicht geprüft werden.
+Fragt Claude um Erlaubnis für „Verarbeitungsschritt abrufen“, **Immer erlauben** wählen (siehe Installation, Schritte 3 und 4). Soll eine Website geprüft werden, fragt Claude außerdem, ob es Seiten von dieser Website abrufen darf (die Diagnose ruft dafür die Support-Seite auf): **Alles für diese Website erlauben** oder **Einmal erlauben** wählen, sonst kann die Seite nicht geprüft werden.
 
 Weitere Beispiele und den Ablauf einer Prüfung zeigt [Erste Prüfung](#erste-prufung).
 
