@@ -1,7 +1,7 @@
 {
-  "name": "empco-uwg-monitor",
+  "name": "agent-services",
   "interface": {
-    "displayName": "EmpCo-UWG Monitor"
+    "displayName": "agent-services"
   },
   "plugins": [
     {

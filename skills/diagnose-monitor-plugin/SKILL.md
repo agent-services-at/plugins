@@ -2,8 +2,8 @@
 name: diagnose-monitor-plugin
 description: Diagnose des EmpCo-UWG Monitor Plugins – meldet belegte Fähigkeiten dieser Umgebung, Verbindung zum Regelserver und alle Versionen, oder wertet auf Wunsch den Ablauf des letzten Laufs aus. Verwenden, wenn die Person die Diagnose verlangt, nach Version, Stand oder Verbindung des Plugins fragt, über eine mögliche Störung des Plugins klagt oder in einem Gespräch mit einer Plugin-Antwort deren Ablauf hinterfragt („prüfe die Antwort“, „was ist passiert“, „warum hast du das so gemacht“, „war das richtig“); nicht für fachliche Prüfaufträge zu einem Text oder einer Website.
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-version: 1.0.0
-build: v1.0.0
+version: 1.1.0
+build: v1.1.0
 ---
 
 # Diagnose des EmpCo-UWG Monitors
@@ -21,9 +21,9 @@ Der Modus ergibt sich aus dem Aufruf und dem Gespräch:
 
 Ein **direkter Aufruf** liegt vor, wenn die Person den Skill mit Slash, `@` oder `$` auswählt, den vollständigen Diagnosetext einfügt, ausdrücklich die Diagnose verlangt oder `version`, `technik` beziehungsweise `voll` als Steuerwort an einen Diagnoseauftrag anhängt. Starte dann ohne Freigabefrage im bestimmten Modus. Eine allgemeine Frage nach der Version ohne Diagnoseauftrag ist dagegen ein möglicher automatischer Start.
 
-Ein **automatischer Start** liegt vor, wenn der Host diesen Skill aufgrund einer allgemeinen Frage nach Version, Stand, Verbindung, einer Störung oder dem Ablauf des Plugins geladen hat. Stelle vor jeder Handlung genau eine Frage, die zugleich klärt, dass der EmpCo-UWG Monitor gemeint ist, und die Diagnose freigibt. Nutze ein Auswahlwerkzeug (etwa `AskUserQuestion`, `Ask User Input`, `request_user_input`), sonst eine kurze Frage in einer Nachricht. Die Optionen lauten **„Bericht erstellen“** (Diagnose im aus dem Gespräch bestimmten Modus starten) und **„Keine Diagnose“** (ohne Handlung beenden). Nenne in der Frage die Handlungen des bestimmten Modus; im Standard-Modus sind das ein Abruf der Regeln (`report-intake`, erscheint im Zugriffsprotokoll des Servers, beginnt keine Prüfung), ein Abruf der öffentlichen Support-Seite und eine lesende Umgebungsprobe. Stelle davor oder danach keine zweite Relevanz-, Umfangs- oder Freigabefrage.
+Ein **automatischer Start** liegt vor, wenn der Host diesen Skill aufgrund einer allgemeinen Frage nach Version, Stand, Verbindung, einer Störung oder dem Ablauf des Plugins geladen hat. Stelle vor jeder Handlung genau eine Frage, die zugleich klärt, dass der EmpCo-UWG Monitor gemeint ist, und die Diagnose freigibt. Nutze ein Auswahlwerkzeug (etwa `AskUserQuestion`, `Ask User Input`, `request_user_input`); steht keines zur Verfügung, stelle eine kurze Textfrage mit nummerierten Optionen, auf die die Ziffer als Antwort genügt. Die Optionen lauten **„Bericht erstellen“** (Diagnose im aus dem Gespräch bestimmten Modus starten) und **„Abbrechen“** (ohne Handlung beenden); als Textfrage steht jede Option in einer eigenen Zeile: „1) Bericht erstellen“, darunter „2) Abbrechen“. Nenne in der Frage die Handlungen des bestimmten Modus; im Standard-Modus sind das ein Abruf der Regeln (`report-intake`, erscheint im Zugriffsprotokoll des Servers, beginnt keine Prüfung), ein Abruf der öffentlichen Support-Seite und eine lesende Umgebungsprobe. Stelle davor oder danach keine zweite Relevanz-, Umfangs- oder Freigabefrage.
 
-Wählt die Person „Keine Diagnose“ oder wird die Freigabefrage abgebrochen, übersprungen oder geschlossen, führst du nichts aus: kein Befehl, kein Abruf, kein Bericht; sage in einem Satz, dass nichts ausgeführt wurde und die Diagnose jederzeit direkt aufgerufen werden kann.
+Wählt die Person „Abbrechen“ oder wird die Freigabefrage abgebrochen, übersprungen oder geschlossen, führst du nichts aus: kein Befehl, kein Abruf, kein Bericht; sage in einem Satz, dass nichts ausgeführt wurde und die Diagnose jederzeit direkt aufgerufen werden kann.
 
 ## Kernregeln
 
@@ -135,7 +135,7 @@ raw: {tools: [...], env: "..."} # nur mit `voll`; steht im selben Block, damit e
 - [ ] `version` enthält nur das gemeinsame Kurzprofil; der Ablauf-Modus enthält dasselbe Profil plus Ablaufbericht.
 - [ ] Die Verbindung ist im technischen Bericht mit Sichtbarkeit des Werkzeugs, Anmeldestatus und (im Standard-Modus) dem einen Abruf belegt; im Ablauf-Modus steht `fetch: not_run`.
 - [ ] Plugin-Version, Skill-Stand und Regelstand stehen getrennt und mit Quelle; keine ist aus einer anderen abgeleitet.
-- [ ] Direkte Aufrufe starten ohne Freigabefrage; ein automatischer Start stellt vor der ersten Handlung genau eine Frage mit „Bericht erstellen“ und „Keine Diagnose“, ohne Antwort wird nichts ausgeführt.
+- [ ] Direkte Aufrufe starten ohne Freigabefrage; ein automatischer Start stellt vor der ersten Handlung genau eine Frage mit „Bericht erstellen“ und „Abbrechen“, ohne Antwort wird nichts ausgeführt.
 - [ ] Unteragent und Webzugriff sind mit je einem Check belegt oder `unknown`.
 - [ ] Kurzfassung und genau ein Bericht liegen in einer Antwort vor; die Versionen stehen als eine Zeile je Komponente.
 - [ ] Der Abruf trägt Uhrzeit (UTC) und `request_id`, soweit vorhanden, sonst `unknown`.

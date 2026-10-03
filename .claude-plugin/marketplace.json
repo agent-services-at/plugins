@@ -1,7 +1,7 @@
 {
-  "name": "empco-uwg-monitor",
-  "owner": { "name": "Niederschick OG & Tobias Zucali" },
-  "description": "Marketplace des Plugins EmpCo-UWG Monitor.",
+  "name": "agent-services",
+  "owner": { "name": "Niederschick OG & Tobias Zucali", "url": "https://github.com/agent-services-at" },
+  "description": "Marketplace von agent-services.at mit dem Plugin EmpCo-UWG Monitor.",
   "plugins": [
     {
       "name": "empco-uwg-monitor",
