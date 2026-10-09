@@ -1,6 +1,6 @@
 ---
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-build: v1.2.0
+build: v1.3.0
 ---
 
 # Ablaufbericht
@@ -38,7 +38,7 @@ Nicht zuordenbar: `unknown`.
 
 ## Verbindung und Host (kurzer Check)
 
-Prüfe ohne Abruf, was der Verlauf und die Werkzeugliste belegen: ob `fetch_claims_monitor_step` sichtbar ist (Werkzeugname wörtlich) und ob die Anmeldung besteht (belegt durch erfolgreich geladene Schrittantworten, widerlegt durch eine Anmelde- oder Verbindungsmeldung im Verlauf, sonst `unknown`). Die Kurzfassung benennt das Ergebnis mit seinem Beleg. „Keine Befunde“ steht nur für Brüche im Verlauf, nie für eine nicht geprüfte Verbindung; ohne Beleg lautet die Angabe „nicht geprüft“. Wer mehr braucht (Fähigkeiten, Versionen, Abruf), ruft die Standarddiagnose auf. Innerhalb der Diagnose entfällt dieser Abschnitt, weil sie `connection` selbst belegt.
+Prüfe ohne Abruf, was der Verlauf und die Werkzeugliste belegen: ob `empco-uwg-monitor:fetch_claims_monitor_step` sichtbar ist (Werkzeugname des Hosts wörtlich) und ob die Anmeldung besteht (belegt durch erfolgreich geladene Schrittantworten, widerlegt durch eine Anmelde- oder Verbindungsmeldung im Verlauf, sonst `unknown`). Die Kurzfassung benennt das Ergebnis mit seinem Beleg. „Keine Befunde“ steht nur für Brüche im Verlauf, nie für eine nicht geprüfte Verbindung; ohne Beleg lautet die Angabe „nicht geprüft“. Wer mehr braucht (Fähigkeiten, Versionen, Abruf), ruft die Standarddiagnose auf. Innerhalb der Diagnose entfällt dieser Abschnitt, weil sie `connection` selbst belegt.
 
 ## Gemeinsames Kurzprofil
 

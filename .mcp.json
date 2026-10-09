@@ -2,7 +2,10 @@
   "mcpServers": {
     "empco-uwg-monitor": {
       "type": "http",
-      "url": "https://claims.agent-services.at/v1/mcp"
+      "url": "https://claims.agent-services.at/v1/mcp",
+      "headers": {
+        "X-Empco-Token": "${EMPCO_MONITOR_TOKEN:-}"
+      }
     }
   }
 }
