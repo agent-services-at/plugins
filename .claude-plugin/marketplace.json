@@ -6,7 +6,7 @@
     {
       "name": "empco-uwg-monitor",
       "source": "./",
-      "description": "Erkennt Greenwashing – irreführende Umweltaussagen, unbelegte Klimaversprechen, selbstgemachte Siegel – nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825.",
+      "description": "Prüft Werbe- und Marketinginhalte auf Risiken nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825 – Umweltaussagen, Siegel, Spitzenstellung, Preis- und Zeitdruckwerbung, Gesundheitsversprechen.",
       "category": "productivity"
     }
   ]

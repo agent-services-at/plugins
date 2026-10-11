@@ -1,9 +1,9 @@
 ---
 name: diagnose-monitor-plugin
-description: Diagnose des EmpCo-UWG Monitor Plugins – meldet belegte Fähigkeiten dieser Umgebung, Verbindung zum Regelserver und alle Versionen, oder wertet auf Wunsch den Ablauf des letzten Laufs aus. Verwenden, wenn die Person die Diagnose verlangt, nach Version, Stand oder Verbindung des Plugins fragt, über eine mögliche Störung des Plugins klagt oder in einem Gespräch mit einer Plugin-Antwort deren Ablauf hinterfragt („prüfe die Antwort“, „was ist passiert“, „warum hast du das so gemacht“, „war das richtig“); nicht für fachliche Prüfaufträge zu einem Text oder einer Website.
+description: "Diagnose des EmpCo-UWG Monitor Plugins – meldet belegte Fähigkeiten dieser Umgebung, Verbindung zum Regelserver und alle Versionen, oder wertet auf Wunsch den Ablauf des letzten Laufs aus. Verwenden, wenn die Person die Diagnose verlangt, nach Version, Stand oder Verbindung des Plugins fragt, über eine mögliche Störung des Plugins klagt oder in einem Gespräch mit einer Plugin-Antwort deren Ablauf hinterfragt („prüfe die Antwort“, „was ist passiert“, „warum hast du das so gemacht“, „war das richtig“); nicht für fachliche Prüfaufträge zu einem Text oder einer Website."
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-version: 1.3.0
-build: v1.3.0
+version: 1.4.0
+build: v1.4.0
 ---
 
 # Diagnose des EmpCo-UWG Monitors
@@ -21,7 +21,7 @@ Der Modus ergibt sich aus dem Aufruf und dem Gespräch:
 
 Ein **direkter Aufruf** liegt vor, wenn die Person den Skill mit Slash, `@` oder `$` auswählt, den vollständigen Diagnosetext einfügt, ausdrücklich die Diagnose verlangt oder `version`, `technik` beziehungsweise `voll` als Steuerwort an einen Diagnoseauftrag anhängt. Starte dann ohne Freigabefrage im bestimmten Modus. Eine allgemeine Frage nach der Version ohne Diagnoseauftrag ist dagegen ein möglicher automatischer Start.
 
-Ein **automatischer Start** liegt vor, wenn der Host diesen Skill aufgrund einer allgemeinen Frage nach Version, Stand, Verbindung, einer Störung oder dem Ablauf des Plugins geladen hat. Stelle vor jeder Handlung genau eine Frage, die zugleich klärt, dass der EmpCo-UWG Monitor gemeint ist, und die Diagnose freigibt. Nutze ein Auswahlwerkzeug (etwa `AskUserQuestion`, `Ask User Input`, `request_user_input`); steht keines zur Verfügung, stelle eine kurze Textfrage, in der jede Option in einer eigenen Zeile mit Buchstaben steht und auf die der Buchstabe als Antwort genügt. Die Optionen lauten **„Bericht erstellen“** (Diagnose im aus dem Gespräch bestimmten Modus starten) und **„Abbrechen“** (ohne Handlung beenden); als Textfrage: „A) Bericht erstellen“, darunter „B) Abbrechen“. Nenne in der Frage die Handlungen des bestimmten Modus; im Standard-Modus sind das ein Abruf der Regeln (`report-intake`, erscheint im Zugriffsprotokoll des Servers, beginnt keine Prüfung), ein Abruf der öffentlichen Support-Seite und eine lesende Umgebungsprobe. Stelle davor oder danach keine zweite Relevanz-, Umfangs- oder Freigabefrage.
+Ein **automatischer Start** liegt vor, wenn der Host diesen Skill aufgrund einer allgemeinen Frage nach Version, Stand, Verbindung, einer Störung oder dem Ablauf des Plugins geladen hat. Stelle vor jeder Handlung genau eine Frage, die zugleich klärt, dass der EmpCo-UWG Monitor gemeint ist, und die Diagnose freigibt. Nutze ein Auswahlwerkzeug (etwa `AskUserQuestion`, `Ask User Input`, `request_user_input`); steht keines zur Verfügung, stelle eine kurze Textfrage, in der jede Option in einer eigenen Zeile mit Buchstaben steht und auf die der Buchstabe als Antwort genügt. Die Optionen lauten **„Bericht erstellen“** (Diagnose im aus dem Gespräch bestimmten Modus starten) und **„Abbrechen“** (ohne Handlung beenden); als Textfrage: „A) Bericht erstellen“, darunter „B) Abbrechen“. Nenne in der Frage die Handlungen des bestimmten Modus; im Standard-Modus sind das ein Abruf der Regeln (`report-intake`, erscheint im Zugriffsprotokoll des Servers, beginnt keine Prüfung), ein Abruf der öffentlichen Support-Seite, eine lesende Umgebungsprobe und die lesende Suche nach einem Projekt. Stelle davor oder danach keine zweite Relevanz-, Umfangs- oder Freigabefrage.
 
 Wählt die Person „Abbrechen“ oder wird die Freigabefrage abgebrochen, übersprungen oder geschlossen, führst du nichts aus: kein Befehl, kein Abruf, kein Bericht; sage in einem Satz, dass nichts ausgeführt wurde und die Diagnose jederzeit direkt aufgerufen werden kann.
 
@@ -66,7 +66,11 @@ Diese Versionsliste gehört zum gemeinsamen Kurzprofil von `version` und Ablauf-
 - **Regelstand:** nur aus einer Schrittantwort dieses Gesprächs: `version`, `platform` (Plattform des Zugriffs) und `variant` (Plattform der gelieferten Variante) sowie `build` aus dem Frontmatter je geladenem Schritt. `version` einer Schrittantwort ist der Stand des Regelpakets und stammt aus derselben Quelle wie die Version von Plugin und Skills (`1.0.0`, in einem Entwicklungsbau `1.0.0-dev.<Kennung>`); `build` ist der Git-Stand, aus dem die Regeln gebaut wurden (Tag, Commit-Abstand, Kurzkennung, bei nicht eingecheckten Änderungen `dirty`), und wird nicht mit `version` verglichen; fehlt es, nenne das als Befund und erfinde keinen Wert. Fehlt `variant`, wurden die Basisregeln geliefert; fehlt `platform`, hat keine Quelle (Pfad, Argument des Werkzeugs, zugeordneter Client) eine Plattform genannt, auch das ist kein Befund. Wurde noch kein Schritt geladen, steht dennoch die Zeile `step:report-intake` mit dem Regelstand `nicht geladen`.
 - Vergleiche `version` und `build` innerhalb ihrer Auslieferungsoberfläche: Die geladenen Schritte bilden den live ausgelieferten Regelstand, Plugin und Skills den paketierten Stand. Abweichungen innerhalb einer Oberfläche kennzeichnest du als möglichen gemischten Stand beziehungsweise Konflikt. Ein jüngerer `build` der live ausgelieferten Regeln gegenüber dem paketierten Stand ist ein erwarteter Auslieferungsunterschied und ändert `mixed_state` nicht.
 
-### 6. Vor der Ausgabe
+### 6. Projekt (Standard-Modus, `technik` und `voll`, nur mit Dateizugriff)
+
+Stelle lesend fest, ob für diesen Arbeitsordner ein Projekt des Skills `manage-claim-monitor-project` eingerichtet ist: Lies dazu `<Ordner>/empco-uwg-monitor/projekt.md` für jeden Ordner einzeln, beginnend beim Arbeitsordner des Gesprächs und dann Ebene für Ebene aufwärts bis zum obersten Ordner; die zuerst gefundene Datei gilt. Ein Suchmuster über Unterordner ersetzt diese Suche nicht. Ohne Fund auf allen Ebenen stehen `found: false` und `levels_above: none`. Lies sie und, falls vorhanden, `triage.md` im selben Ordner `empco-uwg-monitor/` nur zum Zählen: ob eine Zeile `Organisation:` vorhanden ist, die Kontextzeilen (Zeilen mit `- ` unter `## Kontext`) und die Triage-Einträge (Überschriften `### ` in `triage.md`). Die Lage des Projekts steht als Anzahl der Ebenen oberhalb des Arbeitsordners (`0` = im Arbeitsordner). Der Bericht enthält vom Projekt nur diese Werte, keine Pfade, keinen Namen der Organisation und keinen Inhalt einer Zeile. Die Diagnose legt kein Projekt an und ändert keines. Ohne Dateizugriff stehen die Werte auf `unknown`; im Modus `version` und im Ablauf-Modus ohne `technik` oder `voll` steht `project: not_run`.
+
+### 7. Vor der Ausgabe
 
 Suche für jedes `true` und `false` das Zitat im Kontext oder in der Ausgabe erneut, ebenso für Anbieter, Produkt, Oberfläche und Modell: Das Zitat muss den genannten Wert wörtlich enthalten (ein Modellname wie „GPT-5“ belegt keinen Anbieter). Nicht gefunden: auf `unknown` zurücksetzen und `downgraded: true` vermerken. Prüfe, dass kein Wert allein aus einem Namen stammt und dass kein Geheimnis, kein Benutzername und keine Werkzeugliste in der Ausgabe steht (außer mit dem Zusatz `voll`).
 
@@ -74,7 +78,7 @@ Suche für jedes `true` und `false` das Zitat im Kontext oder in der Ausgabe ern
 
 Gib in dieser Reihenfolge aus:
 
-1. **Kurzfassung** in höchstens acht Zeilen (mit Ablaufbericht zehn) für die Person: Umgebung, die wichtigsten Fähigkeiten, Zustand der Verbindung, Versionen, offene Punkte und jede Herabstufung. Schreibe die Kurzfassung in einfachen Worten, ohne Feldnamen und Kennungen des Berichts (nicht `unknown`, `not_run`, `request_id`; sage „nicht feststellbar“, „nicht ausgeführt“) und ohne Verweis auf diese Anweisung („laut Diagnosevorgabe“).
+1. **Kurzfassung** in höchstens acht Zeilen (mit Ablaufbericht zehn) für die Person: Umgebung, die wichtigsten Fähigkeiten, Zustand der Verbindung, Versionen, ob ein Projekt eingerichtet ist, offene Punkte und jede Herabstufung. Schreibe die Kurzfassung in einfachen Worten, ohne Feldnamen und Kennungen des Berichts (nicht `unknown`, `not_run`, `request_id`; sage „nicht feststellbar“, „nicht ausgeführt“) und ohne Verweis auf diese Anweisung („laut Diagnosevorgabe“).
 2. **Bericht für den Support** in genau einem Codeblock (Format YAML), damit die Person ihn mit einem Griff kopieren kann. Im Modus `version` enthält er nur das gemeinsame Kurzprofil:
 
 ```yaml
@@ -82,7 +86,7 @@ diagnose: {version: 1, observed_at: "<UTC-Zeit oder unknown>", scope: version}
 runtime:
   vendor: {value: ..., source: ..., evidence: "..."}
   product: {value: ..., source: ..., evidence: "..."}
-  surface: {value: chat | work | cowork | code | api | ide | unknown, source: ..., evidence: "..."}
+  surface: {value: chat | work | claude | code | api | ide | unknown, source: ..., evidence: "..."}
   model: {value: ..., source: ..., evidence: "..."}
 capabilities:
   agents.spawn: {value: true | false | unknown, source: ..., evidence: "..."}
@@ -100,7 +104,7 @@ diagnose: {version: 1, observed_at: "<UTC-Zeit oder unknown>", scope: standard |
 runtime:
   vendor: {value: ..., source: ..., evidence: "..."}
   product: {value: ..., source: ..., evidence: "..."}
-  surface: {value: chat | work | cowork | code | api | ide | unknown, source: ..., evidence: "..."}
+  surface: {value: chat | work | claude | code | api | ide | unknown, source: ..., evidence: "..."}
   model: {value: ..., source: ..., evidence: "..."}
 capabilities:
   agents.spawn: {value: true | false | unknown, source: ..., evidence: "..."}
@@ -120,6 +124,12 @@ versions:                       # eine Zeile je Komponente, immer dieselben Feld
   - {component: "connector:<Server>", version: "... | nicht feststellbar", source: ".mcp.json | Host", url: "<Adresse ohne Query>"}
   - {component: "step:report-intake", version: "...", build: "... | unknown", source: "Schrittantwort", platform: "... | keine", variant: "... | basis"}
 mixed_state: true | false | unknown   # true, wenn geladene Schrittversionen voneinander abweichen
+project:                        # aus Schritt 6
+  found: {value: true | false | unknown, source: probe | unknown, evidence: "..."}
+  levels_above: <Zahl> | none | unknown
+  organisation_line: true | false | unknown
+  kontext_lines: <Zahl> | unknown
+  triage_entries: <Zahl> | unknown   # 0 ohne triage.md
 unknowns: [...]
 conflicts: []                   # widersprüchliche Belege innerhalb derselben Auslieferungsoberfläche; die Host-Manifeste behalten ihren jeweils vorgesehenen Transporttyp
 raw: {tools: [...], env: "..."} # nur mit `voll`; steht im selben Block, damit er sich mit einem Griff kopieren lässt; bei mehr als 50 Werkzeugen nach Quelle gruppiert, nur Namen
@@ -140,4 +150,5 @@ raw: {tools: [...], env: "..."} # nur mit `voll`; steht im selben Block, damit e
 - [ ] Kurzfassung und genau ein Bericht liegen in einer Antwort vor; die Versionen stehen als eine Zeile je Komponente.
 - [ ] Der Abruf trägt Uhrzeit (UTC) und `request_id`, soweit vorhanden, sonst `unknown`.
 - [ ] Es wurde nichts installiert, nichts gesendet und kein Connector-Werkzeug außer dem freigegebenen Abruf aufgerufen.
+- [ ] Das Projekt steht im technischen Bericht nur mit Fund, Ebenen und Zählungen, ohne Pfade, Namen oder Inhalte; die Diagnose hat nichts angelegt oder geändert.
 - [ ] Der Standard-Modus endet mit dem Hinweis auf `version`, `technik` und `voll`.

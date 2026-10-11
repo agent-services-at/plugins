@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "empco-uwg-monitor",
-  "version": "1.3.0",
-  "description": "Erkennt Greenwashing – irreführende Umweltaussagen, unbelegte Klimaversprechen, selbstgemachte Siegel – nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825.",
+  "version": "1.4.0",
+  "description": "Prüft Werbe- und Marketinginhalte auf Risiken nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825 – Umweltaussagen, Siegel, Spitzenstellung, Preis- und Zeitdruckwerbung, Gesundheitsversprechen.",
   "author": {
     "name": "Tobias Zucali & Niederschick OG",
     "url": "https://nw-partner.at"
@@ -12,7 +12,7 @@
     "com.openai": {
       "interface": {
         "displayName": "EmpCo-UWG Monitor",
-        "shortDescription": "Greenwashing-Risiken nach UWG und EmpCo prüfen",
+        "shortDescription": "Werbeaussagen nach UWG und EmpCo prüfen",
         "developerName": "Tobias Zucali & Niederschick OG",
         "category": "Business & Operations",
         "websiteURL": "https://nw-partner.at",
