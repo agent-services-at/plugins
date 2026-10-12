@@ -1,6 +1,6 @@
 ---
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
-build: v1.4.0
+build: v1.5.0
 ---
 
 # Einrichtung des Plugins
@@ -67,6 +67,8 @@ Aktualisierungen übernimmt Claude selbst (**Automatisch synchronisieren** ist v
 
 Meldungen bei der Aktualisierung erklärt [Aktualisierung in Claude: Meldungen](#aktualisierung-in-claude-meldungen).
 
+Ist das Plugin als Zip-Datei hochgeladen, die neue Fassung wie unter [Neue Fassung installieren](#neue-fassung-installieren) beschrieben installieren.
+
 ### Verbindung neu anmelden
 
 Wenn der Monitor meldet, dass die Verbindung zum Regelserver fehlt, oder der Konnektor nicht **Verbunden** anzeigt:
@@ -125,6 +127,8 @@ Das Plugin läuft in der **ChatGPT-Desktop-App** im Modus **Work**. Im Browser (
 1. **Einstellungen > Plugins** öffnen, Reiter **Marketplace**.
 2. Beim Marketplace `agent-services` auf **Upgrade** klicken.
 3. Einen Chat im Modus **Work** öffnen.
+
+Ist das Plugin als Zip-Datei hochgeladen, die neue Fassung wie unter [Neue Fassung installieren](#neue-fassung-installieren) beschrieben installieren.
 
 ### Verbindung neu anmelden
 
@@ -202,10 +206,26 @@ Ist der Marketplace nicht erreichbar, lässt sich dasselbe Paket als Zip-Datei i
      * Die Zip-Datei auswählen.
      * Die Anmeldung wie in [Schritt 3 der Installation in ChatGPT](#installation-chatgpt) abschließen.
 
-**Neue Fassung installieren:**
+#### Neue Fassung installieren
 
 - **Claude:** Ein per Zip-Datei installiertes Plugin lässt sich nicht zuverlässig überschreiben. Das Plugin zuerst unter [Anpassungen > Plugins > Meine](https://claude.ai/customize/plugins/yours) über **Entfernen** löschen und die heruntergeladene Zip-Datei hochladen. Erscheint die installierte Fassung nicht sofort, kann sie verzögert sein; nach einer Stunde erneut prüfen.
-- **ChatGPT:** Ein hochgeladenes Plugin lässt sich in ChatGPT weder über die Oberfläche aktualisieren noch löschen; das ist nur mit einem Skript möglich. Für ChatGPT ist deshalb der Marketplace der empfohlene Weg.
+- **ChatGPT:** Ein hochgeladenes Plugin aktualisiert ChatGPT auf Auftrag selbst. Diesen Text in der Desktop-App im Modus **Work** als Nachricht senden, danach einen neuen Chat beginnen:
+
+  ```text
+  Aktualisiere mein hochgeladenes Plugin „EmpCo-UWG Monitor“ (Manifestname empco-uwg-monitor) mit dem Plugin-Archiv unter https://claims.agent-services.at/downloads/empco-uwg-monitor-plugin.zip.
+
+  Vor jeder Änderung:
+  1. Ermittle genau dieses Plugin in meinem Konto und nenne Plugin-ID, Version, Release-ID, Bereich (persönlich oder Arbeitsbereich), Sichtbarkeit und die gespeicherten Dateien. Eine Plugin-ID aus einer anderen Quelle verwendest du erst, nachdem das Konto sie bestätigt hat.
+  2. Lade das Archiv und prüfe, dass es sich vollständig entpacken lässt, nur sichere Pfade und lesbare Manifeste enthält und die Plattform es als Plugin-Paket annimmt.
+  3. Prüfe, dass Manifestname und Anzeigename des Archivs mit dem gefundenen Plugin übereinstimmen.
+  4. Nenne Abweichungen von Empfehlungen für Plugin-Pakete, die das Hochladen nicht verhindern. Brich ohne Hochladen ab, wenn das Ziel nicht eindeutig ist, ein Name abweicht oder das Archiv beschädigt ist.
+
+  Aktualisiere dann genau dieses Plugin und verwende die Release-ID als Schutz vor gleichzeitigen Änderungen. Plugin-ID, Eigentümer, Bereich, Sichtbarkeit, Freigaben, MCP-Adresse und Anmeldung bleiben erhalten; vom Dienst erzeugte Kompatibilitätsdateien bleiben bestehen, auch wenn sie im Archiv fehlen. Ändere kein anderes Plugin.
+
+  Lies das Plugin danach zurück und nenne alte und neue Release-ID, die Version, ob die Aktualisierung gelungen ist, Hinweise aus der Prüfung und ob ein weiterer Schritt nötig ist. Ein Testabruf über die Verbindung ist nicht nötig.
+  ```
+
+  Für ChatGPT ist der Marketplace der empfohlene Weg: Er aktualisiert ohne diesen Auftrag.
 
 ### Verbindung und Anmeldung
 

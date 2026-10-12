@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "empco-uwg-monitor",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Prüft Werbe- und Marketinginhalte auf Risiken nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825 – Umweltaussagen, Siegel, Spitzenstellung, Preis- und Zeitdruckwerbung, Gesundheitsversprechen.",
   "author": {
     "name": "Tobias Zucali & Niederschick OG",
@@ -12,7 +12,7 @@
     "com.openai": {
       "interface": {
         "displayName": "EmpCo-UWG Monitor",
-        "shortDescription": "Werbeaussagen nach UWG und EmpCo prüfen",
+        "shortDescription": "Inhalte nach EmpCo/UWG prüfen",
         "developerName": "Tobias Zucali & Niederschick OG",
         "category": "Business & Operations",
         "websiteURL": "https://nw-partner.at",
