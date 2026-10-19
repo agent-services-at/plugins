@@ -1,11 +1,11 @@
 {
   "name": "empco-uwg-monitor",
   "displayName": "EmpCo-UWG Monitor",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Prüft Werbe- und Marketinginhalte auf Risiken nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825 – Umweltaussagen, Siegel, Spitzenstellung, Preis- und Zeitdruckwerbung, Gesundheitsversprechen.",
   "author": {
     "name": "Tobias Zucali & Niederschick OG",
     "url": "https://nw-partner.at"
   },
-  "license": "Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG."
+  "license": "Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited."
 }

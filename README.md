@@ -1,6 +1,6 @@
 # agent-services – Plugin-Marketplace
 
-Dieses Repository enthält ausschließlich das gebaute Plugin „EmpCo-UWG Monitor" (Version 1.5.0) für Anwendungen mit Plugin-Unterstützung (getestet und empfohlen mit Claude und ChatGPT, einschließlich Codex) und wird bei jedem Release automatisch befüllt. Änderungen hier werden überschrieben.
+Dieses Repository enthält ausschließlich das gebaute Plugin „EmpCo-UWG Monitor" (Version 1.6.0) für Anwendungen mit Plugin-Unterstützung (getestet und empfohlen mit Claude und ChatGPT, einschließlich Codex) und wird bei jedem Release automatisch befüllt. Änderungen hier werden überschrieben.
 
 Zum Verwenden ist ein Zugangscode (Lizenz) nötig, der bei der Anmeldung der Verbindung eingegeben wird.
 
@@ -16,4 +16,4 @@ Der Marketplace gehört zu [Agent Services](https://github.com/agent-services-at
 
 ## Lizenz
 
-Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG.
+Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
