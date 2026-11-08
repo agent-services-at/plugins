@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "empco-uwg-monitor": {
+    "pruefstoff": {
       "type": "http",
-      "url": "https://claims.agent-services.at/v1/mcp",
+      "url": "https://mcp.agent-services.at/pruefstoff",
       "headers": {
         "X-Empco-Token": "${EMPCO_MONITOR_TOKEN:-}"
       }

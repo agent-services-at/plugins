@@ -1,10 +1,10 @@
 {
   "name": "agent-services",
   "owner": { "name": "Niederschick OG & Tobias Zucali", "url": "https://github.com/agent-services-at" },
-  "description": "Marketplace von agent-services.at mit dem Plugin EmpCo-UWG Monitor.",
+  "description": "Marketplace von agent-services.at mit dem Plugin PRÜFSTOFF.",
   "plugins": [
     {
-      "name": "empco-uwg-monitor",
+      "name": "pruefstoff",
       "source": "./",
       "description": "Prüft Werbe- und Marketinginhalte auf Risiken nach österreichischem UWG und EU EmpCo-Richtlinie 2024/825 – Umweltaussagen, Siegel, Spitzenstellung, Preis- und Zeitdruckwerbung, Gesundheitsversprechen.",
       "category": "productivity"

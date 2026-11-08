@@ -1,11 +1,11 @@
 ---
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
-build: v1.6.0
+build: v2.0.0
 ---
 
 # Ablaufbericht
 
-Werte den letzten Lauf des EmpCo-UWG Monitors in diesem Gespräch aus und vergleiche ihn mit dem Soll der geladenen Schrittantworten. Der Bericht beschreibt nur Struktur: Schritt-Kennungen, Versionen, Werkzeugnamen, Status, Reihenfolge und Zählungen. Geprüfte Texte, Fundstellen, Bewertungen und Eingaben der Person gehören nie in den Bericht. Alles stammt aus dem Verlauf dieses Gesprächs; nichts wird an den Server gesendet, und es entsteht keine Datei: Die Person kopiert den Bericht aus der Antwort.
+Werte den letzten Lauf des PRÜFSTOFF EmpCo-UWG-Monitors in diesem Gespräch aus und vergleiche ihn mit dem Soll der geladenen Schrittantworten. Der Bericht beschreibt nur Struktur: Schritt-Kennungen, Versionen, Werkzeugnamen, Status, Reihenfolge und Zählungen. Geprüfte Texte, Fundstellen, Bewertungen und Eingaben der Person gehören nie in den Bericht. Alles stammt aus dem Verlauf dieses Gesprächs; nichts wird an den Server gesendet, und es entsteht keine Datei: Die Person kopiert den Bericht aus der Antwort.
 
 ## Grenzen des Verlaufs
 
@@ -38,7 +38,7 @@ Nicht zuordenbar: `unknown`.
 
 ## Verbindung und Host (kurzer Check)
 
-Prüfe ohne Abruf, was der Verlauf und die Werkzeugliste belegen: ob `empco-uwg-monitor:fetch_claims_monitor_step` sichtbar ist (Werkzeugname des Hosts wörtlich) und ob die Anmeldung besteht (belegt durch erfolgreich geladene Schrittantworten, widerlegt durch eine Anmelde- oder Verbindungsmeldung im Verlauf, sonst `unknown`). Die Kurzfassung benennt das Ergebnis mit seinem Beleg. „Keine Befunde“ steht nur für Brüche im Verlauf, nie für eine nicht geprüfte Verbindung; ohne Beleg lautet die Angabe „nicht geprüft“. Wer mehr braucht (Fähigkeiten, Versionen, Abruf), ruft die Standarddiagnose auf. Innerhalb der Diagnose entfällt dieser Abschnitt, weil sie `connection` selbst belegt.
+Prüfe ohne Abruf, was der Verlauf und die Werkzeugliste belegen: ob `pruefstoff:fetch_agent_step` sichtbar ist (Werkzeugname des Hosts wörtlich) und ob die Anmeldung besteht (belegt durch erfolgreich geladene Schrittantworten, widerlegt durch eine Anmelde- oder Verbindungsmeldung im Verlauf, sonst `unknown`). Die Kurzfassung benennt das Ergebnis mit seinem Beleg. „Keine Befunde“ steht nur für Brüche im Verlauf, nie für eine nicht geprüfte Verbindung; ohne Beleg lautet die Angabe „nicht geprüft“. Wer mehr braucht (Fähigkeiten, Versionen, Abruf), ruft die Standarddiagnose auf. Innerhalb der Diagnose entfällt dieser Abschnitt, weil sie `connection` selbst belegt.
 
 ## Gemeinsames Kurzprofil
 
@@ -72,7 +72,7 @@ gates:                          # je Kriterium
 counts: {friction: {host: 0, verbindung: 0, regeln: 0, eingabe: 0, unknown: 0}, gates: {met: 0, not_met: 0, partial: 0, unknown: 0}}
 ```
 
-3. **Senden** (nur bei eigenständigem Aufruf): wie bei der Standarddiagnose an die Supportadresse (`references/support.md`, ohne Skill die Seite `/support`), Betreff: `Ablaufbericht EmpCo-UWG Monitor – <Datum>`. Mit `request_id` und Uhrzeit findet der Support die Abrufe im Zugriffsprotokoll des Servers und vergleicht sie mit diesem Verlauf.
+3. **Senden** (nur bei eigenständigem Aufruf): wie bei der Standarddiagnose an die Supportadresse (`references/support.md`, ohne Skill die Seite `/support`), Betreff: `Ablaufbericht PRÜFSTOFF EmpCo-UWG-Monitor – <Datum>`. Mit `request_id` und Uhrzeit findet der Support die Abrufe im Zugriffsprotokoll des Servers und vergleicht sie mit diesem Verlauf.
 
 Empfiehl keine Änderungen an den Regeln; beschreibe nur, was im Verlauf geschah.
 

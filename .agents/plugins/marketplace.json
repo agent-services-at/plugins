@@ -5,7 +5,7 @@
   },
   "plugins": [
     {
-      "name": "empco-uwg-monitor",
+      "name": "pruefstoff",
       "source": {
         "source": "local",
         "path": "."
