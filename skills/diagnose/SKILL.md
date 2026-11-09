@@ -1,9 +1,9 @@
 ---
 name: diagnose
-description: "Erstelle einen belegten Diagnosebericht für den Support: Umgebung, Verbindung, Versionen, letzter Lauf. Wenn du nach Version, Verbindung oder Störung fragst oder eine Antwort hinterfragst („prüfe die Antwort“, „was ist passiert“). Prüfaufträge und Plugin-Aktualisierung: Skill „empco-uwg-report“."
+description: "Erstelle einen belegten Diagnosebericht für den Support: Umgebung, Verbindung, Versionen, letzter Lauf. Wenn du nach Version, Verbindung, Störung oder Problem fragst oder eine Antwort hinterfragst („prüfe die Antwort“, „was ist passiert“). Prüfaufträge und Plugin-Aktualisierung: Skill „empco-uwg-report“."
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
-version: 2.0.0
-build: v2.0.0
+version: 2.1.0
+build: v2.1.0
 ---
 
 # Diagnose des PRÜFSTOFF EmpCo-UWG-Monitors
@@ -46,7 +46,7 @@ Für `web.fetch` ruft du, wenn ein Webwerkzeug vorhanden ist, genau einmal `http
 
 ### 3. Umgebung (nur Standard-Modus, `technik` und `voll`, nur mit Shell)
 
-Führe die „Umgebungsprobe“ aus (Datei `scripts/probe.sh`, in der Textfassung der Skriptblock am Ende). Es meldet Betriebssystem, Marker der Sandbox, vorhandene Programme und Bibliotheken; die Uhrzeit in UTC; Benutzername, Arbeitsverzeichnis und Umgebungsvariablen nur mit dem Argument `--roh`, das du nur mit dem Zusatz `voll` verwendest. Ohne Shell ist der Schritt nicht ausführbar; die zugehörigen Werte sind `unknown`.
+Führe die „Umgebungsprobe“ aus (Datei `references/probe.md`, in der Textfassung der Abschnitt „Umgebungsprobe“ am Ende). Es meldet Betriebssystem, Marker der Sandbox, vorhandene Programme und Bibliotheken; die Uhrzeit in UTC; Benutzername, Arbeitsverzeichnis und Umgebungsvariablen nur mit dem Argument `--roh`, das du nur mit dem Zusatz `voll` verwendest. Ohne Shell ist der Schritt nicht ausführbar; die zugehörigen Werte sind `unknown`.
 
 ### 4. Lieferung und Verbindung (nicht in `version`)
 

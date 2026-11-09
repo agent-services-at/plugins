@@ -1,3 +1,3 @@
 interface:
-  display_name: "PRÜFSTOFF – Prüfkontext verwalten"
-  short_description: "Hält Angaben einer Organisation für Prüfungen über Gespräche hinweg bereit"
+  display_name: "PRÜFSTOFF Context"
+  short_description: "Halte Angaben und Bewertungen deiner Organisation dauerhaft fest"

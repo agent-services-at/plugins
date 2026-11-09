@@ -1,3 +1,13 @@
+---
+license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
+build: v2.1.0
+---
+
+# Umgebungsprobe
+
+Den Block unverändert als Standardeingabe an `bash -s` übergeben, etwa mit `bash -s <<'PROBE'` und der Schlusszeile `PROBE`; mit dem Argument `--roh` als `bash -s -- --roh <<'PROBE'`.
+
+```bash
 #!/usr/bin/env bash
 # Umgebungsprobe des Diagnose-Skills: lesend, ohne Netzwerkzugriff.
 # Standard: keine Benutzernamen, Pfade oder Umgebungsvariablen.
@@ -39,3 +49,4 @@ if [ "$roh" = 1 ]; then
   env 2>/dev/null | grep -E '^(CLAUDE|CLAUDECODE|CODEX|OPENAI_|CHATGPT|TERM_PROGRAM|CI|GITHUB_ACTIONS)' |
     sed -E 's/((KEY|TOKEN|SECRET|PASSWORD|AUTH|COOKIE)[^=]*=).*/\1<redacted>/' | sed -E 's/(=.{60}).*/\1.../'
 fi
+```

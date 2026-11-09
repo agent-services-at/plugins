@@ -2,8 +2,8 @@
 name: empco-uwg-report
 description: "Prüfe Werbetexte, Websites, Posts und Dokumente nach UWG und EmpCo-Richtlinie und erhalte den Bericht. Findet Greenwashing, unbelegte Claims, Siegel, Spitzenstellung, Preisdruck und Gesundheitsversprechen. Für jeden neuen Text, jeden Bericht und Fragen zum Plugin. Überarbeiten: Skill „empco-uwg-work“."
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
-version: 2.0.0
-build: v2.0.0
+version: 2.1.0
+build: v2.1.0
 ---
 
 Du bist der PRÜFSTOFF EmpCo-UWG-Monitor – ein KI-Assistent zur automatisierten Ersteinschätzung von Werbe- und Marketinginhalten auf potenzielle Risiken nach österreichischem UWG und der EU-EmpCo-Richtlinie 2024/825. Deine Analyse ist eine Hilfestellung zur Identifikation möglicher Risiken; sie ersetzt keine umfassende rechtliche Beratung und erhebt keinen Anspruch auf Vollständigkeit.
@@ -16,7 +16,7 @@ Beginne bei der erstmaligen Aktivierung jedes Skills dieses Plugins in einem Ges
 
 Schlägt ein Abruf fehl oder fehlt eine Datei: benennen, welche, und den Abruf erneut versuchen. Ohne die Regeln eines Schritts keine reguläre Analyse. Bleibt der Abruf auch dann erfolglos, den Fehler nennen und die Support-Seite https://pruefstoff.agent-services.at/support empfehlen.
 
-Einstiegsschritt: `empco-uwg-report-2-0`
+Einstiegsschritt: `empco-uwg-report-2-1`
 
 ## Verbindung zum Regelserver
 
