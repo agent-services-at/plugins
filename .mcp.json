@@ -2,10 +2,7 @@
   "mcpServers": {
     "pruefstoff": {
       "type": "http",
-      "url": "https://mcp.agent-services.at/pruefstoff",
-      "headers": {
-        "X-Empco-Token": "${EMPCO_MONITOR_TOKEN:-}"
-      }
+      "url": "https://mcp.agent-services.at/pruefstoff"
     }
   }
 }

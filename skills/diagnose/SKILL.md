@@ -2,8 +2,8 @@
 name: diagnose
 description: "Erstelle einen belegten Diagnosebericht für den Support: Umgebung, Verbindung, Versionen, letzter Lauf. Wenn du nach Version, Verbindung, Störung oder Problem fragst oder eine Antwort hinterfragst („prüfe die Antwort“, „was ist passiert“). Prüfaufträge und Plugin-Aktualisierung: Skill „empco-uwg-report“."
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
-version: 2.1.0
-build: v2.1.0
+version: 2.2.0
+build: v2.2.0
 ---
 
 # Diagnose des PRÜFSTOFF EmpCo-UWG-Monitors
@@ -19,7 +19,7 @@ Der Modus ergibt sich aus dem Aufruf und dem Gespräch:
 
 ## Zu Beginn: Modus und Freigabe
 
-Ein **direkter Aufruf** liegt vor, wenn die Person den Skill mit Slash, `@` oder `$` auswählt, den vollständigen Diagnosetext einfügt, ausdrücklich die Diagnose verlangt oder `version`, `technik` beziehungsweise `voll` als Steuerwort an einen Diagnoseauftrag anhängt. Starte dann ohne Freigabefrage im bestimmten Modus. Eine allgemeine Frage nach der Version ohne Diagnoseauftrag ist dagegen ein möglicher automatischer Start.
+Ein **direkter Aufruf** liegt vor, wenn die Person den Diagnose-Skill in der Anwendung auswählt, den vollständigen Diagnosetext einfügt, ausdrücklich die Diagnose verlangt oder `version`, `technik` beziehungsweise `voll` als Steuerwort an einen Diagnoseauftrag anhängt. Starte dann ohne Freigabefrage im bestimmten Modus. Eine allgemeine Frage nach der Version ohne Diagnoseauftrag ist dagegen ein möglicher automatischer Start.
 
 Ein **automatischer Start** liegt vor, wenn der Host diesen Skill aufgrund einer allgemeinen Frage nach Version, Stand, Verbindung, einer Störung oder dem Ablauf des Plugins geladen hat. Stelle vor jeder Handlung genau eine Frage, die zugleich klärt, dass der PRÜFSTOFF EmpCo-UWG-Monitor gemeint ist, und die Diagnose freigibt. Nutze ein Auswahlwerkzeug (etwa `AskUserQuestion`, `Ask User Input`, `request_user_input`); steht keines zur Verfügung, stelle eine kurze Textfrage, in der jede Option in einer eigenen Zeile mit Buchstaben steht und auf die der Buchstabe als Antwort genügt. Die Optionen lauten **„Bericht erstellen“** (Diagnose im aus dem Gespräch bestimmten Modus starten) und **„Abbrechen“** (ohne Handlung beenden); als Textfrage: „A) Bericht erstellen“, darunter „B) Abbrechen“. Nenne in der Frage die Handlungen des bestimmten Modus; im Standard-Modus sind das ein Abruf der Regeln (`empco-uwg-report`, erscheint im Zugriffsprotokoll des Servers, beginnt keine Prüfung), ein Abruf der öffentlichen Support-Seite, eine lesende Umgebungsprobe und die lesende Suche nach einem Projekt. Stelle davor oder danach keine zweite Relevanz-, Umfangs- oder Freigabefrage.
 
@@ -136,7 +136,7 @@ raw: {tools: [...], env: "..."} # nur mit `voll`; steht im selben Block, damit e
 ```
 
 3. **Senden:** Der Bericht geht per E-Mail an die Supportadresse (`references/support.md`, ohne Skill die Seite `/support`), Betreff: `Diagnose PRÜFSTOFF EmpCo-UWG-Monitor – <Plugin-Version oder Stand dieses Textes> – <surface>`. Fordere die Person auf, den Bericht aus dem Kasten oben zu kopieren und zu senden, ohne eine Datei anzubieten. Sprich die Person dabei nie mit Fachbegriffen an (nicht „YAML“, „Block“, „Schlüssel“): Nenne ihn „den Bericht“ oder „den Kasten mit dem Bericht“.
-4. **Weitere Modi (nur Standard-Modus):** Schließe mit einem kurzen Hinweis: `version` liefert nur Versionen und einfache Fähigkeitschecks, `technik` ergänzt technische Details zu einem vorhandenen Prüflauf, `voll` zusätzlich Werkzeugliste und lokale Umgebungsangaben.
+4. **Weitere Modi (nur Standard-Modus):** Nenne die Zusätze ohne Slash-Befehl: `version` liefert nur Versionen und einfache Fähigkeitschecks, `technik` ergänzt technische Details zu einem vorhandenen Prüflauf, `voll` zusätzlich Werkzeugliste und lokale Umgebungsangaben.
 
 ## Definition of done
 
