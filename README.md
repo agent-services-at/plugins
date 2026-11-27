@@ -1,6 +1,6 @@
 # agent-services – Plugin-Marketplace
 
-Dieses Repository enthält ausschließlich das gebaute Plugin „PRÜFSTOFF" (Version 2.2.0) für Anwendungen mit Plugin-Unterstützung (getestet und empfohlen mit Claude und ChatGPT, einschließlich Codex) und wird bei jedem Release automatisch befüllt. Änderungen hier werden überschrieben.
+Dieses Repository enthält ausschließlich das gebaute Plugin „PRÜFSTOFF" (Version 2.3.0) für Anwendungen mit Plugin-Unterstützung (getestet und empfohlen mit Claude und ChatGPT, einschließlich Codex) und wird bei jedem Release automatisch befüllt. Änderungen hier werden überschrieben.
 
 Zum Verwenden ist ein Lizenzschlüssel nötig, der bei der Anmeldung der Verbindung eingegeben wird.
 

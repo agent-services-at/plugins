@@ -1,6 +1,6 @@
 ---
 license: Copyright (c) 2026 Niederschick OG & Tobias Zucali. All rights reserved. Use restricted to customers with a valid agreement with Niederschick OG. Storing, copying or redistributing step responses is prohibited.
-build: v2.2.0
+build: v2.3.0
 ---
 
 # Ablaufbericht
